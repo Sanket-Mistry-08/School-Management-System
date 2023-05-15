@@ -1,0 +1,24 @@
+.con{
+    height: 400px;
+}
+.con-1{
+    /* border: 1px solid black; */
+    /* border-right: 0; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(232, 232, 232);
+}
+.con-2{
+    /* border: 1px solid black; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(209, 209, 209);
+}
+.button-container{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    width: 100px;
+    border-radius: 8px;
+}

@@ -1,0 +1,175 @@
+<!--  student - table  -->
+<div class="wrapper" *ngIf="!updateForm && field=='students'">
+  <h1 class="mt-3">Student data</h1>
+  <div class="isRelative">
+    <div class="table-container">
+      <div class="profile-container" *ngIf="isProfileActive">
+        <app-user-profile></app-user-profile>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Year</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students">
+            <th scope="row">{{student.id}}</th>
+            <td>{{student.name}}</td>
+            <td>{{student.degree}}</td>
+            <td>{{student.year}}</td>
+            <td><i class="fa-solid fa-circle-info mr-3" (click)="showProfileView(student.id)"></i><i
+                (click)="onUpdate(student)" class="fa-regular fa-pen-to-square"></i><i (click)="onDelete(student.id)"
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="wrapper" *ngIf="!updateForm && field =='teachers'">
+  <h1 class="mt-3">Teacher data</h1>
+  <div class="isRelative">
+    <div class="table-container">
+      <div class="profile-container" *ngIf="isProfileActive">
+        <app-user-profile></app-user-profile>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Sem</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Main Subject</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">axd1</th>
+            <td>Rameshbhai Patel</td>
+            <td>7</td>
+            <td>Msc</td>
+            <td>Computer Science</td>
+            <td><i class="fa-solid fa-circle-info mr-3" ></i><i
+                 class="fa-regular fa-pen-to-square"></i><i 
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+          <tr>
+            <th scope="row">axw7</th>
+            <td>Sureshbhai Joshi</td>
+            <td>2</td>
+            <td>B.ed</td>
+            <td>Algorithms</td>
+            <td><i class="fa-solid fa-circle-info mr-3" ></i><i
+                 class="fa-regular fa-pen-to-square"></i><i 
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+          <tr>
+            <th scope="row">cxs2</th>
+            <td>Chandubhai Solanki</td>
+            <td>3</td>
+            <td>Bsc</td>
+            <td>Advance java </td>
+            <td><i class="fa-solid fa-circle-info mr-3" ></i><i
+                 class="fa-regular fa-pen-to-square"></i><i 
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+          <tr>
+            <th scope="row">awx1</th>
+            <td>Rajeshbhai Patel</td>
+            <td>8</td>
+            <td>Msc</td>
+            <td>Php,Python</td>
+            <td><i class="fa-solid fa-circle-info mr-3" ></i><i
+                 class="fa-regular fa-pen-to-square"></i><i 
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+          <tr>
+            <th scope="row">qsa0</th>
+            <td>Jaybhai Dabhi</td>
+            <td>4</td>
+            <td>Msc</td>
+            <td>Mechanics of machine</td>
+            <td><i class="fa-solid fa-circle-info mr-3" ></i><i
+                 class="fa-regular fa-pen-to-square"></i><i 
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+          <tr>
+            <th scope="row">uis2</th>
+            <td>Krupaliben Golani</td>
+            <td>6</td>
+            <td>B.ed</td>
+            <td>Machine Learning</td>
+            <td><i class="fa-solid fa-circle-info mr-3" ></i><i
+                 class="fa-regular fa-pen-to-square"></i><i 
+                class="fa-sharp fa-solid fa-trash mx-3"></i></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" *ngIf="!updateForm && field=='dashboard'">
+  <h1 class="mt-3">Dashboard</h1>
+  <app-student-form></app-student-form>
+</div>
+
+<!-- update - form  -->
+<div class="wrapper" *ngIf="updateForm">
+
+  <div class="form-container" >
+    <h1 class="mt-3">Add student</h1>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="form-input-container">
+      <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" id="exampleInputName" formControlName="name"
+          placeholder="Enter Full Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail">Email</label>
+          <input type="text" class="form-control" id="exampleInputEmail" formControlName="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPhoneNumber">Phone number</label>
+        <input type="text" class="form-control" id="exampleInputPhoneNumber" formControlName="phone"
+          placeholder="Phone number">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Degree Program</label>
+        <select class="form-control" formControlName="degree" id="exampleFormControlSelect1">
+          <option value="CE">CE</option>
+          <option value="ME">ME</option>
+          <option value="IT">IT</option>
+          <option value="CS">CS</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Select Year</label>
+        <select class="form-control" formControlName="year" id="exampleFormControlSelect2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>
+</div>

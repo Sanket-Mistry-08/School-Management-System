@@ -1,0 +1,27 @@
+img{
+    border-radius: 50%;
+}
+.row{
+    width: 430px;
+}
+i{
+    cursor: pointer;
+}
+i.nav{
+    width: fit-content;
+    height: fit-content;
+    color: black;
+    background-color: #E8E8E8;
+    padding:0.4rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    border-radius: 50%;
+}
+i.nav:hover{
+    color: red;
+}
+i.update:hover{
+    color: blue;
+}

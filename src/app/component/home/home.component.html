@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div class="row con">
+        <div class="col-md-4 con-1 pt-5">
+            <div class="button-container px-4">
+                <button class="btn btn-warning mb-2" routerLink="./add/student">Add</button>
+                <button class="btn btn-success" routerLink="./data">Show</button>
+            </div>
+        </div>
+        <div class="col-md-8 con-2" >
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    test-in-process                    
+    <button (click)="getImage()">
+        GetImagess
+    </button>
+    <div *ngFor="let image of images">
+        {{image | json}}
+    </div>
+</div> -->
+
+<!-- <img src="{{image.url}}" alt="not found"> -->
+
+
+
+
+

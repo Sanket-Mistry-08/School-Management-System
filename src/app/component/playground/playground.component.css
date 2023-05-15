@@ -1,0 +1,11 @@
+.wrapper{
+    width: 100vw;
+    background-color: var(--bc-dark);
+    overflow: hidden;
+}
+.wrapper-one{
+    z-index: 11;
+    position: sticky;
+    top: 0;
+    left: 0;
+}

@@ -1,0 +1,68 @@
+<div class="menu">
+    <div class="menu-item">
+        <span>Main menu</span>
+        <ul class="parent-ul">
+            <div class="menu-item-container" (mouseleave)="onmouseleave(childUl)" (mouseenter)="onmouseenter(childUl)" *ngFor="let data of main_menu_data">
+                <li class="parent-li mb-2">
+                    <i class="logo" class="{{data.logo}}"></i>
+                    <span [routerLink]="[data.name]">{{data.name | titlecase}} </span>
+                    <i *ngIf="data.expandable" class="fa-solid fa-chevron-right chevron"></i>
+                </li>
+                <ul class="child-ul" #childUl >
+                    <li class="child-li mb-2" [routerLink]="[data.name.toLowerCase(),child.toLowerCase()]" *ngFor="let child of data.child;let i =index">{{child}}</li>
+                </ul>
+
+            </div>
+        </ul>
+    </div>
+    <div class="menu-item">
+        <span>Management</span>
+        <ul class="parent-ul">
+            <div class="menu-item-container" (mouseleave)="onmouseleave(childUl)" (mouseenter)="onmouseenter(childUl)" *ngFor="let data of management_data">
+                <li class="parent-li mb-2">
+                    <i class="logo" class="{{data.logo}}"></i>
+                    <span [routerLink]="[data.name]">{{data.name | titlecase}} </span>
+                    <i *ngIf="data.expandable" class="fa-solid fa-chevron-right chevron"></i>
+                </li>
+                <ul class="child-ul" #childUl >
+                    <li class="child-li mb-2" *ngFor="let child of data.child;let i =index">{{child}}</li>
+                </ul>
+
+            </div>
+        </ul>
+    </div>
+    <div class="menu-item">
+        <span>Pages</span>
+        <ul class="parent-ul">
+            <div class="menu-item-container" (mouseleave)="onmouseleave(childUl)" (mouseenter)="onmouseenter(childUl)" *ngFor="let data of pages_data">
+                <li class="parent-li mb-2">
+                    <i class="logo" class="{{data.logo}}"></i>
+                    <span [routerLink]="[data.name]">{{data.name | titlecase}} </span>
+                    <i *ngIf="data.expandable" class="fa-solid fa-chevron-right chevron"></i>
+                </li>
+                <ul class="child-ul" #childUl >
+                    <li class="child-li mb-2" *ngFor="let child of data.child;let i =index">{{child}}</li>
+                </ul>
+
+            </div>
+        </ul>
+    </div>
+    <div class="menu-item">
+        <span>Others</span>
+        <ul class="parent-ul">
+            <div class="menu-item-container" (mouseleave)="onmouseleave(childUl)" (mouseenter)="onmouseenter(childUl)" *ngFor="let data of others_data">
+                <li class="parent-li mb-2">
+                    <i class="logo" class="{{data.logo}}"></i>
+                    <span [routerLink]="[data.name]">{{data.name | titlecase}} </span>
+                    <i *ngIf="data.expandable" class="fa-solid fa-chevron-right chevron"></i>
+                </li>
+                <ul class="child-ul" #childUl >
+                    <li class="child-li mb-2" *ngFor="let child of data.child;let i =index">{{child}}</li>
+                </ul>
+
+            </div>
+        </ul>
+    </div>
+    
+    <!-- <div class="menu-item"><span> Ui interface </span></div> -->
+</div>

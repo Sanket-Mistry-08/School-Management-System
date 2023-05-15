@@ -1,0 +1,19 @@
+
+
+<div class="mx-5 my-4" style="position:relative" >
+    <!-- <i class="fa-sharp fa-solid fa-xmark nav" style="position:absolute;top:0;right:100px;" (click)="onClick()"></i> -->
+    <div class="row">
+        <div class="col" style="display: flex;flex-direction: column;align-items:end;"><div #imageContainer><img id="img" #image src="{{imgUrl}}" width="100" height="100" alt=""></div>
+            <label >
+            <i class="fa-sharp fa-solid fa-pen-to-square update"></i><input id="file" type="file" style="display: none;" id="" (change)="uploadImage($event)"></label>
+            
+
+        </div>
+        <div class="col">
+            <p>Name: {{name}}</p>
+            <p>Degree: {{degree}}</p>
+            <p>Year: {{year }}</p>
+        </div>
+        <div class="col"><i class="fa-sharp fa-solid fa-xmark nav" style="float:right" (click)="onClick()"></i></div>
+    </div>
+</div>

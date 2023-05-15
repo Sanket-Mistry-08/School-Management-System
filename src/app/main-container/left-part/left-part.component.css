@@ -1,0 +1,67 @@
+.menu{
+    padding: 1rem 1rem;
+}
+.menu-item > span{
+    display: inline-block;
+
+    margin-bottom: .4rem;
+    color: var(--grey-dark-two);
+}
+.menu-item-container{
+    padding-bottom: 10px ;
+    transition: all 1s ease;
+}
+.parent-ul{
+    padding: 0.5rem 0.5rem 0;
+    position: relative;
+}
+.parent-li{
+    list-style: none;
+    
+    /* height: 2.5rem; */
+    cursor: pointer;
+    /* transition: all 1s ease; idk */ 
+}
+.child-ul{
+    list-style: none;
+    margin: .2rem auto;
+    padding: 0 1rem;
+  height: 0px;
+  overflow: hidden;
+  width: 200px;
+
+  transition: height 0.3s ease;
+}
+/* .menu-item-container:hover .child-ul{
+    height: 44px;
+} */
+.child-li{
+    width: inherit;
+    overflow: auto;
+}
+
+.fa-chevron-right{
+    position: relative;
+    top: 6px;
+    font-size: smaller;font-weight: bold;float: right;
+    transition: all 0.4s ease;
+    border-radius: 50%
+}
+.menu-item-container:hover .chevron{
+    right: -10px;
+    color: rgb(16, 94, 163);
+
+    
+}
+.menu-item-container:hover .logo{
+    color: rgb(16, 94, 163);
+
+    
+}
+.logo{
+    width: 35px;
+    display: inline-flex;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
