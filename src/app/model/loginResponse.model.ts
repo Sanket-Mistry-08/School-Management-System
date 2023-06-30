@@ -1,4 +1,4 @@
-export class loginResponse{
+export class loginResponse {
     // private String state;
     // private HttpStatus httpStatus;
     // private Collection<? extends GrantedAuthority> authorities;

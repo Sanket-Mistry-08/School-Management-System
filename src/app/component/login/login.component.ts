@@ -3,6 +3,7 @@ import { Route, Router } from '@angular/router';
 import { loginDTO } from 'src/app/model/loginDTO.model';
 import { loginResponse } from 'src/app/model/loginResponse.model';
 import { AuthenticationService } from 'src/app/service/authentication.service';
+import { RoleServiceService } from 'src/app/service/role-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 })
 export class LoginComponent implements OnInit{
 
-  constructor(private authService:AuthenticationService,private router:Router){
+  constructor(private authService:AuthenticationService,private router:Router,private roleService:RoleServiceService){
 
   }
   ngOnInit(): void {
@@ -30,10 +31,13 @@ export class LoginComponent implements OnInit{
       console.log(res)
       console.log(res.state);
       console.log(res.httpStatus);
-      console.log(res.authorities)
+      console.log(res.authorities[0].authority)
 
       if(res.state == 'authorized'){
         this.router.navigateByUrl("/home")
+        this.roleService.username=username.value;
+        this.roleService.role=res.authorities[0].authority;
+
       }else{
         alert("invalid credentials")
       }

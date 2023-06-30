@@ -5,6 +5,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class FieldService {
 
-  fieldEmitter:EventEmitter<string> = new EventEmitter();
+  fieldEmitter: EventEmitter<string> = new EventEmitter();
   constructor() { }
 }

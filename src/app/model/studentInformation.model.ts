@@ -1,19 +1,19 @@
-export class studentInformation{
-    
+export class studentInformation {
+
     constructor(
-        private id:number,
-        private studentName:String,
-        private studentEmail:String,
-        private studentStandard:String,
-        private studentAdress:String,
-        private studentSex:String,
-        private studentPhone:String,
-        private studentDOB:String,
-        private fatherName:String,
-        private fatherEmail:String,
-        private fatherPhone:String,
-        private motherName:String,
-        private motherEmail:String,
-        private motherPhone:String
-        ){}
+        public id: number,
+        public studentName: String,
+        public studentEmail: String,
+        public studentStandard: String,
+        public studentAdress: String,
+        public studentSex: String,
+        public studentPhone: String,
+        public studentDOB: String,
+        public fatherName: String,
+        public fatherEmail: String,
+        public fatherPhone: String,
+        public motherName: String,
+        public motherEmail: String,
+        public motherPhone: String
+    ) { }
 }

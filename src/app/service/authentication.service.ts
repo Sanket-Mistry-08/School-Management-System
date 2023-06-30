@@ -10,17 +10,17 @@ import { registerResponse } from '../model/registerResponse.model';
 })
 export class AuthenticationService {
 
-  baseUrl='http://localhost:5200/user'
+  baseUrl = 'http://localhost:5200/user'
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  doLogin(loginDTO:loginDTO){
+  doLogin(loginDTO: loginDTO) {
 
-    return this.http.post<loginResponse>(`${this.baseUrl}/login`,loginDTO);
+    return this.http.post<loginResponse>(`${this.baseUrl}/login`, loginDTO);
 
   }
 
-  doRegister(registerDTO:registerDTO){
-    return this.http.post<registerResponse>(`${this.baseUrl}/register`,registerDTO)
+  doRegister(registerDTO: registerDTO) {
+    return this.http.post<registerResponse>(`${this.baseUrl}/register`, registerDTO)
   }
 }

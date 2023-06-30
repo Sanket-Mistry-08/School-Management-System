@@ -1,4 +1,4 @@
-export class loginDTO{
+export class loginDTO {
 
-    constructor(private username:string,private password:string) { }
+    constructor(private username: string, private password: string) { }
 }

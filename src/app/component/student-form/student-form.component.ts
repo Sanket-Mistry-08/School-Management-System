@@ -16,7 +16,7 @@ export class StudentFormComponent implements OnInit {
   studentForm!: any;
   count = 0;
   submit: boolean = false;
-  selectedFile!:File;
+  selectedFile!: File;
   // selectedFile!:FileList;
 
   constructor(private fb: FormBuilder, private das: CrudServiceService, private router: Router) { }
@@ -33,9 +33,9 @@ export class StudentFormComponent implements OnInit {
 
   }
 
-  selectFile(event:any){
+  selectFile(event: any) {
 
-      this.selectedFile=event.target.files[0]
+    this.selectedFile = event.target.files[0]
 
   }
 
@@ -46,7 +46,7 @@ export class StudentFormComponent implements OnInit {
     console.log("onSubmit() => ", this.studentForm.value);
     this.das.postData(this.studentForm.value).subscribe(res => {
       console.log(res);
-      this.das.uploadImage(this.selectedFile,res.id).subscribe(res => console.log("img uploaded succesfully"))
+      this.das.uploadImage(this.selectedFile, res.id).subscribe(res => console.log("img uploaded succesfully"))
     });
     setTimeout(() => {
       this.router.navigate(['/home/data']);

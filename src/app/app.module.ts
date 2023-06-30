@@ -28,6 +28,8 @@ import { TeacherAddComponent } from './component/teacher/teacher-add/teacher-add
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import { AdminStudentComponent } from './component/admin-student/admin-student.component';
 import { AdminTeacherComponent } from './component/admin-teacher/admin-teacher.component';
+import { TeacherDashboardComponent } from './component/teacher-dashboard/teacher-dashboard.component';
+import { StudentDashboardComponent } from './component/student-dashboard/student-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { AdminTeacherComponent } from './component/admin-teacher/admin-teacher.c
     TeacherAddComponent,
     AdminDashboardComponent,
     AdminStudentComponent,
-    AdminTeacherComponent
+    AdminTeacherComponent,
+    TeacherDashboardComponent,
+    StudentDashboardComponent
 
   ],
   imports: [
@@ -64,7 +68,6 @@ import { AdminTeacherComponent } from './component/admin-teacher/admin-teacher.c
     BrowserAnimationsModule,
     MatFormFieldModule,
     ReactiveFormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,21 +17,29 @@ import { TeacherAddComponent } from './component/teacher/teacher-add/teacher-add
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import { AdminStudentComponent } from './component/admin-student/admin-student.component';
 import { AdminTeacherComponent } from './component/admin-teacher/admin-teacher.component';
+import { TeacherDashboardComponent } from './component/teacher-dashboard/teacher-dashboard.component';
+import { StudentDashboardComponent } from './component/student-dashboard/student-dashboard.component';
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'about',component:AboutComponent},
-  {path:'contact',component:ContactComponent},
-  {path:'home',component:PlaygroundComponent,children:[
-    {path:'students/student list',component:StudentListComponent},
-    {path:'students/student add',component:StudentAddComponent},
-    {path:'teachers/teacher list',component:TeacherListComponent},
-    {path:'teachers/teacher add',component:TeacherAddComponent},
-    {path:'dashboard/admin dashboard',component:AdminDashboardComponent,children:[
-      {path:'student',component:AdminStudentComponent},{path:'teacher',component:AdminTeacherComponent}
-    ]}
-  ]},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  {
+    path: 'home', component: PlaygroundComponent, children: [
+      { path: 'students/student list', component: StudentListComponent },
+      { path: 'students/student add', component: StudentAddComponent },
+      { path: 'teachers/teacher list', component: TeacherListComponent },
+      { path: 'teachers/teacher add', component: TeacherAddComponent },
+      {
+        path: 'dashboard/admin dashboard', component: AdminDashboardComponent, children: [
+          { path: 'student', component: AdminStudentComponent }, { path: 'teacher', component: AdminTeacherComponent }
+        ],
+      },
+      { path: 'dashboard/teacher dashboard', component: TeacherDashboardComponent },
+      { path: 'dashboard/student dashboard', component: StudentDashboardComponent },
+    ]
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 
 ];

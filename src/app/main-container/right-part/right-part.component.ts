@@ -12,19 +12,19 @@ export class RightPartComponent implements OnInit {
 
   field = 'dashboard'
 
-  constructor(private route:ActivatedRoute,private fieldService:FieldService,private router:Router){
+  constructor(private route: ActivatedRoute, private fieldService: FieldService, private router: Router) {
   }
 
   ngOnInit(): void {
 
     this.route.paramMap.subscribe(params => {
-      
-      let newField = ""+params.get('field')
+
+      let newField = "" + params.get('field')
       this.field = newField
-      console.log(params.get('field') , "right part");
+      console.log(params.get('field'), "right part");
       this.fieldService.fieldEmitter.emit(this.field)
     });
-  
+
   }
 
 }

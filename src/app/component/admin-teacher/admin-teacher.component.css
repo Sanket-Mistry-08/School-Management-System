@@ -5,9 +5,10 @@
 }
 .card > h4{
     padding: 0.4rem 0.6rem;
-    background-color: #bdbdbd;
+    background-color: var(--bc-dark);
+    color: var(--red);
 }
 .card > p{
     padding: 0.4rem 0.6rem;
-    background-color: #d1d1d1;
+    background-color: #fbfbfb;
 }

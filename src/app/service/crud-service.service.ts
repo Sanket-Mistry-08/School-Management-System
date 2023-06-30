@@ -7,7 +7,7 @@ import { Student } from '../student.model';
 })
 
 export class CrudServiceService {
-  baseUrl:String = 'http://localhost:8083'
+  baseUrl: String = 'http://localhost:8083'
   studentEmitter: EventEmitter<Student> = new EventEmitter();
   constructor(private http: HttpClient) { }
 
@@ -15,12 +15,12 @@ export class CrudServiceService {
     return this.http.get<Student[]>("http://localhost:8083/api/student");
   }
 
-  getSingleData(id:number){
-    return this.http.get<Student>("http://localhost:8083/api/student/"+id);
+  getSingleData(id: number) {
+    return this.http.get<Student>("http://localhost:8083/api/student/" + id);
   }
 
   postData(student: Student) {
-    
+
     return this.http.post<Student>("http://localhost:8083/api/student", student);
 
   }
@@ -33,11 +33,11 @@ export class CrudServiceService {
     return this.http.delete<Student>(`http://localhost:8083/api/student/${id}`);
   }
 
-  uploadImage(imgFile:File,id:number){
+  uploadImage(imgFile: File, id: number) {
     let formData = new FormData();
-    formData.append('file',imgFile)
+    formData.append('file', imgFile)
     console.log(formData);
-    return this.http.post(`${this.baseUrl}/api/student/upload/image/${id}`,formData,{responseType: 'text'});
+    return this.http.post(`${this.baseUrl}/api/student/upload/image/${id}`, formData, { responseType: 'text' });
   }
 
 

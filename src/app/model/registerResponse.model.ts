@@ -1,4 +1,4 @@
-export class registerResponse{
+export class registerResponse {
 
     httpStatus!: string
 
